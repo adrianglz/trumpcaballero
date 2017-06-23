@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>Xerador de ordes executivas Caballerís</title>
+	<style>
+	.eo {
+		transform: skewY(-8deg) skewX(0deg) rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+		position: absolute;
+		left: 15px;
+		top: 130px;
+		width: 265px;
+		height: 220px;
+		text-shadow: 0 0 1px black;
+		color: transparent;
+		font-family: monospace;
+	}
+	</style>
+</head>
+<body style='perspective: 400px'>
+<div style='margin: 50px; position: absolute; left: 0; top: 0; z-index: 50'>
+	<img src='index.jpg'/>  
+	<div class='eo' id='eo' contenteditable onkeypress='keypress(event);' style='font-size: 17px;' spellcheck='false'>
+		Edítame.
+		<br/><br/>
+		Preme '&lt;' ou '&gt;' para mudar o tamaño da fonde.
+		<br/><br/>
+		Despois, chía un pantallazo.
+	</div>
+</body>
+<script type='text/javascript'>
+function keypress(e) {
+	var key = e.key;
+	if (key != "<" && key != ">") return;
+	var adj = (key == "<") ? -1 : +1;
+	var eo = document.getElementById('eo');
+	var size = parseInt(eo.style['font-size']);
+	eo.style['font-size'] = (size + adj) + 'px';
+	e.preventDefault();
+}
+</script>
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-758774-12', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>
